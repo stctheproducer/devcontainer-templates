@@ -1,17 +1,16 @@
 
-# Hello, World (hello)
+# TypeScript (typescript-dev)
 
-A hello world Template
+Develop Node.js based applications in TypeScript. Includes Node.js, eslint, nvm, yarn, and the TypeScript compiler.
 
 ## Options
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| imageVariant | Ubuntu version (use ubuntu-22.04 or ubuntu-18.04 on local arm64/Apple Silicon): | string | jammy |
-| greeting | Select a pre-made greeting, or enter your own | string | hey |
+| imageVariant | Node.js version (use -bookworm, -bullseye variants on local arm64/Apple Silicon): | string | 18-bookworm |
 
 
 
 ---
 
-_Note: This file was auto-generated from the [devcontainer-template.json](https://github.com/stctheproducer/devcontainer-templates/blob/main/src/hello/devcontainer-template.json).  Add additional notes to a `NOTES.md`._
+_Note: This file was auto-generated from the [devcontainer-template.json](https://github.com/stctheproducer/devcontainer-templates/blob/main/src/typescript-dev/devcontainer-template.json).  Add additional notes to a `NOTES.md`._
