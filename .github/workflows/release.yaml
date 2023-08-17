@@ -11,6 +11,7 @@ permissions:
   actions: write
   contents: read
   packages: write
+  pull-requests: write
 
 jobs:
   deploy:
@@ -38,8 +39,6 @@ jobs:
 
       - name: Create PR for Documentation
         id: push_image_info
-        permissions:
-          pull-requests: write
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
