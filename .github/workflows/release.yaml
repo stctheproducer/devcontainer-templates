@@ -7,12 +7,6 @@ on:
       - 'closed'
   workflow_dispatch:
 
-permissions:
-  actions: write
-  contents: write
-  packages: write
-  pull-requests: write
-
 jobs:
   deploy:
     name: Build and push images
