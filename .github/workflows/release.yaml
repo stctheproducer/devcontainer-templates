@@ -1,5 +1,10 @@
 name: "Release Dev Container Templates & Generate Documentation"
 on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - 'closed'
   workflow_dispatch:
 
 permissions:
@@ -33,6 +38,8 @@ jobs:
 
       - name: Create PR for Documentation
         id: push_image_info
+        permissions:
+          pull-requests: write
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
