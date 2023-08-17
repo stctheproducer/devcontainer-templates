@@ -1,0 +1,102 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+  "name": "TypeScript",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "build": {
+    "dockerfile": "Dockerfile",
+  },
+  "mounts": [
+    "source=ts-devcontainer_profile,target=/home/node,type=volume",
+    "source=ts-devcontainer_brew,target=/home/linuxbrew,type=volume"
+  ],
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  "features": {
+    "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+      "upgradePackages": true,
+      "packages": "openssl,curl,fuse3,sqlite3,ca-certificates,tini,build-essential"
+    },
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "configureZshAsDefaultShell": true,
+      "installOhMyZsh": true,
+      "upgradePackages": true,
+      "username": "node",
+      "userUid": "automatic",
+      "userGid": "automatic"
+    },
+    "ghcr.io/stuartleeks/dev-container-features/shell-history:0": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {
+      "installDirectlyFromGitHubRelease": true,
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers-contrib/features/pass-apt-get:1": {},
+    "ghcr.io/joshuanianji/devcontainer-features/github-cli-persistence:0": {},
+    "ghcr.io/meaningful-ooo/devcontainer-features/homebrew:2": {
+      "shallowClone": true
+    },
+    "ghcr.io/devcontainers-contrib/features/prettier:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers-contrib/features/prisma:2": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers-contrib/features/redis-homebrew:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers-contrib/features/mkcert:1": {},
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+    "ghcr.io/devcontainers-contrib/features/fzf:1": {}
+  },
+  "overrideFeatureInstallOrder": [
+    "ghcr.io/meaningful-ooo/devcontainer-features/homebrew",
+    "ghcr.io/devcontainers-contrib/features/redis-homebrew"
+  ],
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
+  // Uncomment the next line to run commands after the container is created.
+  "postCreateCommand": ".devcontainer/post-create.sh",
+  // Uncomment the next line to run commands after the container has started.
+  "postStartCommand": ".devcontainer/post-start.sh",
+  // Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "WallabyJs.quokka-vscode",
+        "formulahendry.auto-close-tag",
+        "dbaeumer.vscode-eslint",
+        "formulahendry.auto-rename-tag",
+        "aaron-bond.better-comments",
+        "usernamehw.errorlens",
+        "formulahendry.auto-complete-tag",
+        "steoates.autoimport",
+        "naumovs.color-highlight",
+        "HookyQR.JSDocTagComplete",
+        "WooodHead.disable-eslint-rule",
+        "ysemeniuk.emmet-live",
+        "ecmel.vscode-html-css",
+        "antfu.iconify",
+        "unifiedjs.vscode-mdx",
+        "christian-kohler.npm-intellisense",
+        "esbenp.prettier-vscode",
+        "yoavbls.pretty-ts-errors",
+        "Prisma.prisma",
+        "bradlc.vscode-tailwindcss",
+        "mike-co.import-sorter",
+        "pmneo.tsimporter",
+        "MaxvanderSchee.web-accessibility",
+        "cpylua.language-postcss",
+        "csstools.postcss",
+        "jripouteau.adonis-vscode-extension",
+        "ziloen.html-entities-converter",
+        "wix.vscode-import-cost",
+        "jock.svg",
+        "bourhaouta.tailwindshades",
+        "antfu.vite"
+      ]
+    }
+  },
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  "remoteUser": "node",
+  "containerUser": "node"
+}

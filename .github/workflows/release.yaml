@@ -2,20 +2,32 @@ name: "Release Dev Container Templates & Generate Documentation"
 on:
   workflow_dispatch:
 
+permissions:
+  actions: write
+  contents: read
+  packages: write
+
 jobs:
   deploy:
+    name: Build and push images
     if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: 🛑 Cancel Previous Runs
+        id: cancel_previous_run
+        uses: styfle/cancel-workflow-action@0.11.0
+      
+      - name: ⬇️ Checkout repo
+        id: checkout_repo
+        uses: actions/checkout@v3
 
       - name: "Publish Templates"
+        id: publish_ghcr
         uses: devcontainers/action@v1
         with:
           publish-templates: "true"
           base-path-to-templates: "./src"
           generate-docs: "true"
-
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

@@ -78,13 +78,13 @@ Templates are source files packaged together that encode configuration for a com
 This repo contains a GitHub Action [workflow](.github/workflows/release.yaml) that will publish each template to GHCR.  By default, each Template will be prefixed with the `<owner/<repo>` namespace.  For example, the two Templates in this repository can be referenced by an [implementing tool](https://containers.dev/supporting#tools) with:
 
 ```
-ghcr.io/devcontainers/template-starter/color:latest
-ghcr.io/devcontainers/template-starter/hello:latest
+ghcr.io/stctheproducer/devcontainer-templates/color:latest
+ghcr.io/stctheproducer/devcontainer-templates/hello:latest
 ```
 
-The provided GitHub Action will also publish a third "metadata" package with just the namespace, eg: `ghcr.io/devcontainers/template-starter`. This contains information useful for tools aiding in Template discovery.
+The provided GitHub Action will also publish a third "metadata" package with just the namespace, eg: `ghcr.io/stctheproducer/devcontainer-templates`. This contains information useful for tools aiding in Template discovery.
 
-'`devcontainers/template-starter`' is known as the template collection namespace.
+'`stctheproducer/devcontainer-templates`' is known as the template collection namespace.
 
 ### Marking Template Public
 

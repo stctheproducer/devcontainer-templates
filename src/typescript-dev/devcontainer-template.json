@@ -1,0 +1,30 @@
+{
+  "id": "typescript-dev",
+  "version": "1.0.0",
+  "name": "TypeScript",
+  "description": "Develop Node.js based applications in TypeScript. Includes Node.js, eslint, nvm, yarn, and the TypeScript compiler.",
+  "documentationURL": "https://github.com/stctheproducer/devcontainer-templates/tree/main/src/typescript-dev",
+  "licenseURL": "https://github.com/stctheproducer/devcontainer-templates/blob/main/LICENSE",
+  "options": {
+    "imageVariant": {
+      "type": "string",
+      "description": "Node.js version (use -bookworm, -bullseye variants on local arm64/Apple Silicon):",
+      "proposals": [
+        "20-bookworm",
+        "18-bookworm",
+        "16-bookworm",
+        "20-bullseye",
+        "18-bullseye",
+        "16-bullseye",
+        "20-buster",
+        "18-buster",
+        "16-buster"
+      ],
+      "default": "18-bookworm"
+    }
+  },
+  "platforms": [
+    "Node.js",
+    "TypeScript"
+  ]
+}
